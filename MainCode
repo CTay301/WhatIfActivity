@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+class PairProcess {
+	public static void main(String[] args) {
+		double SA, TAD;
+		String CID, CN, TC;
+		TAD = 0;
+		
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.print( "Customer ID? :" );
+		CID = keyboard.next();
+		
+		System.out.print( "Customer Name?  :" );
+		CN = keyboard.next();
+		
+		System.out.print( "Sales Amount?  :" );
+		SA = keyboard.nextDouble();
+		
+		System.out.print( "Tax Code?  :" );
+		TC = keyboard.next();
+		
+		
+		
+		if (TC == "NRM")  {
+			TAD = SA * 1.06;
+			}
+		else if (TC == "NPF")  {
+			TAD = SA * 1.00;
+			}
+		else if (TC == "BIZ")  {
+			TAD = SA * 1.045;
+			}
+		else
+			System.out.println("Wrong Tax Code, try again");
+			
+		System.out.println("Customer ID: " + CID);
+		System.out.println("Customer Name: " + CN);
+		System.out.println("Sales Amount: $" + SA);
+		System.out.println("Tax Code: " + TC);
+		System.out.println("Total Amount Due: $" + TAD);
+	}	
+}
